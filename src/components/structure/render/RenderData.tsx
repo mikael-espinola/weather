@@ -46,7 +46,9 @@ function RenderData() {
   };
 
   const toFahrenheit = (celciusValue: number) => {
-    const fahrenheit: number = celciusValue * (9 / 5) + 32;
+    console.log(celciusValue);
+    let fahrenheit = 0;
+    fahrenheit = celciusValue * (9 / 5) + 32;
     return fahrenheit;
   };
 
@@ -89,7 +91,11 @@ function RenderData() {
                     <Row>
                       <Col>
                         <Card.Text key={index} className="fs-3">
-                          {data.main.temp.toFixed(1)}{" "}
+                          {unity
+                            ? `${data.main.temp.toFixed(1)} ºC`
+                            : `${toFahrenheit(data.main.temp).toFixed(
+                                1
+                              )} ºF`}{" "}
                           <Button
                             onClick={handleUnity}
                             style={{ padding: "5px" }}
