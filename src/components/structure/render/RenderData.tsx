@@ -92,10 +92,8 @@ function RenderData() {
                       <Col>
                         <Card.Text key={index} className="fs-3">
                           {unity
-                            ? `${data.main.temp.toFixed(1)} ºC`
-                            : `${toFahrenheit(data.main.temp).toFixed(
-                                1
-                              )} ºF`}{" "}
+                            ? `${data.main.temp.toFixed(1)}`
+                            : `${toFahrenheit(data.main.temp).toFixed(1)}`}{" "}
                           <Button
                             onClick={handleUnity}
                             style={{ padding: "5px" }}
